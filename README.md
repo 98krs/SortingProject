@@ -22,3 +22,6 @@ Your submission must include the following:
 4) Execution screenshots showing arrays before and after each sort and the results of the verification method. 
 
 
+Resources:
+https://www.baeldung.com/java-generic-array
+https://stackoverflow.com/questions/50645468/the-operator-is-undefined-for-the-argument-types-java-lang-object-java-lang
