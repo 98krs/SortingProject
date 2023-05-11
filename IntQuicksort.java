@@ -9,9 +9,8 @@ public class IntQuicksort<T> { //EDITED: <T>
       to sort an int array.
       @param array The array to sort.
    */
-   
-   public static void quickSort(Object array[]) //EDITED: int --> Object 
-   {
+
+   public static void quickSort(Object array[]) { //EDITED: int --> Object
       doQuickSort(array, 0, array.length - 1);
    }
 
@@ -22,19 +21,17 @@ public class IntQuicksort<T> { //EDITED: <T>
       @param start The starting subscript of the list to sort
       @param end The ending subscript of the list to sort
    */
-   
-   private static void doQuickSort(Object array[], int start, int end) //EDITED: int --> Object
-   {
+
+   private static void doQuickSort(Object array[], int start, int end) { //EDITED: int --> Object
       int pivotPoint;
-      
-      if (start < end)
-      {
+
+      if (start < end) {
          // Get the pivot point.
          pivotPoint = partition(array, start, end);
-         
+
          // Sort the first sub list.
          doQuickSort(array, start, pivotPoint - 1);
-         
+
          // Sort the second sub list.
          doQuickSort(array, pivotPoint + 1, end);
       }
@@ -51,9 +48,8 @@ public class IntQuicksort<T> { //EDITED: <T>
       @param end The ending subscript of the area to partition.
       @return The subscript of the pivot value.
    */
-   
-   private static int partition(Object array[], int start, int end) //EDITED: int --> Object 
-   {
+
+   private static int partition(Object array[], int start, int end) { //EDITED: int --> Object
       int pivotValue;    // To hold the pivot value
       int endOfLeftList; // Last element in the left sub list.
       int mid;           // To hold the mid-point subscript
@@ -63,33 +59,31 @@ public class IntQuicksort<T> { //EDITED: <T>
       mid = (start + end) / 2;
 
       // Swap the middle element with the first element.
-      // This moves the pivot value to the start of 
+      // This moves the pivot value to the start of
       // the list.
       swap(array, start, mid);
 
       // Save the pivot value for comparisons.
-      pivotValue = array[start];
-      
+      pivotValue = array[start]; // error is exactly what the error reads, you are attempting to assign pivotValue (an int) the value of array[start] (an object)
+
       // For now, the end of the left sub list is
       // the first element.
       endOfLeftList = start;
-      
+
       // Scan the entire list and move any values that
       // are less than the pivot value to the left
       // sub list.
-      for (int scan = start + 1; scan <= end; scan++)
-      {
-         if (array[scan] < pivotValue)
-         {
+      for (int scan = start + 1; scan <= end; scan++) {
+         if (array[scan] < pivotValue) { // this is the same problem that was encountered in the previous file. Need to cast the object data type into something else
             endOfLeftList++;
             swap(array, endOfLeftList, scan);
          }
       }
-      
+
       // Move the pivot value to end of the
       // left sub list.
       swap(array, start, endOfLeftList);
-      
+
       // Return the subscript of the pivot value.
       return endOfLeftList;
    }
@@ -101,18 +95,16 @@ public class IntQuicksort<T> { //EDITED: <T>
       @param a The subscript of the first element.
       @param b The subscript of the second element.
    */
-   
-   private static void swap(Object[] array, int a, int b) //EDITED: int --> Object
-   {
+
+   private static void swap(Object[] array, int a, int b) { //EDITED: int --> Object
       int temp;
-      
-      temp = array[a];
+
+      temp = array[a]; // error is exactly what the error reads, you are attempting to assign temp (an int) the value of array[a] (an object)
       array[a] = array[b];
       array[b] = temp;
    }
 
-static void printArray(Object arr[]) //EDITED: int --> Object 
-   {
+   static void printArray(Object arr[]) { //EDITED: int --> Object
        int n = arr.length;
        for (int i=0; i<n; ++i)
            System.out.print(arr[i] + " ");
@@ -121,16 +113,15 @@ static void printArray(Object arr[]) //EDITED: int --> Object
 
 
 //Driver method
-public static void main(String args[])
-{
- Integer arr[] = {12, 34, 54, 2, 3}; //EDITED: int --> Integer
- System.out.println("Array before sorting");
- printArray(arr);
+   public static void main(String args[]) {
+      Integer arr[] = {12, 34, 54, 2, 3}; //EDITED: int --> Integer
+      System.out.println("Array before sorting");
+      printArray(arr);
 
- IntQuicksort<Integer> ob = new IntQuicksort<Integer>(); //EDITED: <Integer>
- ob.quickSort(arr);
+      IntQuicksort<Integer> ob = new IntQuicksort<Integer>(); //EDITED: <Integer>
+      ob.quickSort(arr); // error is in reference to the called method being static, easiest way to fix (probably not the way you are actually supposed to) is to remove the static parameter from the method in question
 
- System.out.println("Array after sorting");
- printArray(arr);
+      System.out.println("Array after sorting");
+      printArray(arr);
+   }
 }
-} 
