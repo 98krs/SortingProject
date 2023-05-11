@@ -5,7 +5,7 @@ public class Shellsort<T> { //EDITED: <T>
  /* A utility function to print array of size n*/
  static void printArray(Object arr[])
  {
-     int n = arr.length;
+     int n = arr.length; // again, making arr.length into a variable is kind of useless as the length of the array will always be accessable with the use of arr.length. In short, `n` offers nothing useful to the program
      for (int i=0; i<n; ++i)
          System.out.print(arr[i] + " ");
      System.out.println();
@@ -33,7 +33,7 @@ public class Shellsort<T> { //EDITED: <T>
              // shift earlier gap-sorted elements up until
              // the correct location for a[i] is found
              int j;
-             for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
+             for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) // this is the same problem that was encountered in the previous file. Need to cast the object data type into something else
                  arr[j] = arr[j - gap];
 
              // put temp (the original a[i]) in its correct
@@ -48,7 +48,7 @@ public class Shellsort<T> { //EDITED: <T>
 // Driver method
 public static void main(String args[])
 {
-    Integer arr[] = {12, 34, 54, 2, 3}; //EDITED: int --> Integer 
+    Integer arr[] = {12, 34, 54, 2, 3}; //EDITED: int --> Integer
     System.out.println("Array before sorting");
     printArray(arr);
 
@@ -58,7 +58,7 @@ public static void main(String args[])
     System.out.println("Array after sorting");
     printArray(arr);
 }
-} 
+}
 
 
 
