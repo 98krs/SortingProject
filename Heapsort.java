@@ -7,7 +7,7 @@ public class Heapsort<T> { //EDITED: <T>
 //____________________________________________________________________________________________________
  public void sort(Object arr[]) //EDITED: int --> Object
  {
-     int n = arr.length;
+     int n = arr.length; // again, making arr.length into a variable is kind of useless as the length of the array will always be accessable with the use of arr.length. In short, `n` offers nothing useful to the program
 
      // Build heap (rearrange array)
      for (int i = n / 2 - 1; i >= 0; i--)
@@ -35,16 +35,28 @@ public class Heapsort<T> { //EDITED: <T>
      int r = 2 * i + 2; // right = 2*i + 2
 
      // If left child is larger than root
+<<<<<<< HEAD
      if (l < n && (Integer)arr[l] > (Integer)arr[largest]) //EDITED: (Integer) added 
          largest = l;
 
      // If right child is larger than largest so far
      if (r < n && (Integer)arr[r] > (Integer)arr[largest]) //EDITED: (Integer) added 
+=======
+     if (l < n && arr[l] > arr[largest]) // this is the same problem that was encountered in the previous file. Need to cast the object data type into something else
+         largest = l;
+
+     // If right child is larger than largest so far
+     if (r < n && arr[r] > arr[largest]) // this is the same problem that was encountered in the previous file. Need to cast the object data type into something else
+>>>>>>> 8b51518cf4e4a5f8ad9f2cd1aae0652c30b3e79d
          largest = r;
 
      // If largest is not root
      if (largest != i) {
+<<<<<<< HEAD
          Object swap = arr[i]; 
+=======
+         int swap = arr[i]; // you are trying to equal an object to an int, hense the error
+>>>>>>> 8b51518cf4e4a5f8ad9f2cd1aae0652c30b3e79d
          arr[i] = arr[largest];
          arr[largest] = swap;
 
@@ -57,7 +69,7 @@ public class Heapsort<T> { //EDITED: <T>
  /* A utility function to print array of size n */
  static void printArray(Object arr[]) //EDITED: int --> Object
  {
-     int n = arr.length;
+     int n = arr.length; // making arr.length into a variable is kind of useless as it is only being used once and the length of the array will always be accessable with the use of arr.length. In short, `n` offers nothing useful to the program
      for (int i = 0; i < n; ++i)
          System.out.print(arr[i] + " ");
      System.out.println();
@@ -68,7 +80,7 @@ public class Heapsort<T> { //EDITED: <T>
  public static void main(String args[])
  {
      Integer arr[] = { 12, 11, 13, 5, 6, 7 }; //EDITED: int --> Object
-     int n = arr.length;
+     int n = arr.length; // <- variable unused. Should likely be removed
 
      Heapsort<Integer> ob = new Heapsort<Integer>(); //EDITED: <Integer>
      ob.sort(arr);
