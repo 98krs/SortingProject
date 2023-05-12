@@ -33,7 +33,7 @@ public class Shellsort<T> { //EDITED: <T>
              // shift earlier gap-sorted elements up until
              // the correct location for a[i] is found
              int j;
-             for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
+             for (j = i; j >= gap && (Integer)arr[j - gap] > (Integer)temp; j -= gap) //EDITED: (Integer) added 
                  arr[j] = arr[j - gap];
 
              // put temp (the original a[i]) in its correct

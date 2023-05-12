@@ -1,32 +1,9 @@
 //Kailan Stewart
 //Merge Sort Code
-//Goal: Modify the code so it handles generic objects
-
-/*
-Before generics:
-package java.lang;
-	public interface Comparable {
-		public int compareTo(Object o)
-	}
-
-After generics:
-package java.lang;
-	public interface Comparable<T> {
-		public int compareTo(T o)
-	}
-
-Here, the compiler cannot detect the error in c.compareTo(“red”)
-   Comparable c = new Date();
-   System.out.println(c.compareTo(“red”));
-Here, the compiler can detect the error in c.compareTo(“red”)
-   Comparable<Date> c = new Date();
-   System.out.println(c.compareTo(“red”));
-
-*/
 
 import java.util.*;
 
-public class Mergesort<T> { //ADDED <T>
+public class Mergesort <T> { //ADDED <T>
 
    //Driver method
     public static void main(String args[]) { //no, don't need to add generics inside main method

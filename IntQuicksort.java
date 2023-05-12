@@ -10,7 +10,7 @@ public class IntQuicksort<T> { //EDITED: <T>
       @param array The array to sort.
    */
    
-   public static void quickSort(Object array[]) //EDITED: int --> Object 
+   public void quickSort(Object array[]) //EDITED: int --> Object //EDITED: removed static 
    {
       doQuickSort(array, 0, array.length - 1);
    }
@@ -54,7 +54,7 @@ public class IntQuicksort<T> { //EDITED: <T>
    
    private static int partition(Object array[], int start, int end) //EDITED: int --> Object 
    {
-      int pivotValue;    // To hold the pivot value
+      Object pivotValue;    // To hold the pivot value //EDITED: int --> Object 
       int endOfLeftList; // Last element in the left sub list.
       int mid;           // To hold the mid-point subscript
 
@@ -79,7 +79,7 @@ public class IntQuicksort<T> { //EDITED: <T>
       // sub list.
       for (int scan = start + 1; scan <= end; scan++)
       {
-         if (array[scan] < pivotValue)
+         if ((Integer)array[scan] < (Integer)pivotValue) //EDITED: (Integer) added 
          {
             endOfLeftList++;
             swap(array, endOfLeftList, scan);
@@ -104,7 +104,7 @@ public class IntQuicksort<T> { //EDITED: <T>
    
    private static void swap(Object[] array, int a, int b) //EDITED: int --> Object
    {
-      int temp;
+      Object temp; //EDITED: int --> Object 
       
       temp = array[a];
       array[a] = array[b];

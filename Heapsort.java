@@ -4,6 +4,7 @@
 //Java program for implementation of Heap Sort
 
 public class Heapsort<T> { //EDITED: <T>
+//____________________________________________________________________________________________________
  public void sort(Object arr[]) //EDITED: int --> Object
  {
      int n = arr.length;
@@ -24,6 +25,7 @@ public class Heapsort<T> { //EDITED: <T>
      }
  }
 
+//___________________________________________________________________________________________________________
  // To heapify a subtree rooted with node i which is
  // an index in arr[]. n is size of heap
  void heapify(Object arr[], int n, int i) //EDITED: int --> Object
@@ -33,16 +35,16 @@ public class Heapsort<T> { //EDITED: <T>
      int r = 2 * i + 2; // right = 2*i + 2
 
      // If left child is larger than root
-     if (l < n && arr[l] > arr[largest])
+     if (l < n && (Integer)arr[l] > (Integer)arr[largest]) //EDITED: (Integer) added 
          largest = l;
 
      // If right child is larger than largest so far
-     if (r < n && arr[r] > arr[largest])
+     if (r < n && (Integer)arr[r] > (Integer)arr[largest]) //EDITED: (Integer) added 
          largest = r;
 
      // If largest is not root
      if (largest != i) {
-         int swap = arr[i];
+         Object swap = arr[i]; 
          arr[i] = arr[largest];
          arr[largest] = swap;
 
@@ -51,6 +53,7 @@ public class Heapsort<T> { //EDITED: <T>
      }
  }
 
+//___________________________________________________________________________________________________________
  /* A utility function to print array of size n */
  static void printArray(Object arr[]) //EDITED: int --> Object
  {
@@ -60,6 +63,7 @@ public class Heapsort<T> { //EDITED: <T>
      System.out.println();
  }
 
+//____________________________________________________________________________________________________________
  // Driver program
  public static void main(String args[])
  {
