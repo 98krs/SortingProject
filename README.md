@@ -3,7 +3,8 @@
 PART 1 
 
 Learning Objectives: Understand sorting algorithms and their code implementation. Practice analyzing, modifying and integrating code. Practice with use of generics for developing modular and reusable code. 
-This programming assignment has two parts. Part 1 is a group component where each group member uses one of the provided files, modifies the code to handle generic objects, tests it with their own main program using an Integer object array, and provides the updated class structure to the group. The group then develops a joint test program that includes a common generic print array method and a common generic method to verify that an array of objects is properly ordered. 
+
+Part 1 is a group component where each group member uses one of the provided files, modifies the code to handle generic objects, tests it with their own main program using an Integer object array, and provides the updated class structure to the group. The group then develops a joint test program that includes a common generic print array method and a common generic method to verify that an array of objects is properly ordered. 
 The group will submit the following files;
 1) Final java class files for each of the generic sorts (merge, quick, heap and shell). The files will include comments identifying where and how the code was changed from the original provided code.
 2) Group main code to test and verify all of the sorts using an Integer object array. The output will display a properly formatted and labeled unordered array prior to each sort and then a final sorted array after each sort (each sort must start with an unordered array) and lastly a verification statement that the resulting array is properly sorted (from a common generic method to verify the order of the array).
